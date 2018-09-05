@@ -4,6 +4,7 @@ const CacheSchema = new mongoose.Schema({
     key: {
         type: String,
         required: true,
+        unique: true,
         lowercase: true
     },
     value: {
@@ -17,7 +18,4 @@ const CacheSchema = new mongoose.Schema({
     }
 });
 
-
-
 module.exports = mongoose.model("Cache", CacheSchema);
-

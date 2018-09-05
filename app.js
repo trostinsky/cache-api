@@ -8,11 +8,13 @@ const RESTError = require("./utils/rest-error");
 
 const app = express();
 
+app.set("view engine", "pug");
+app.set("views", "./views");
+
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({extended: true})); // for parsing application/x-www-form-urlencoded
 
 app.use("/cache/", cacheRouter);
-
 app.use((req, res, next) => {
     throw new RESTError("Not found", 404, module.filename);
 })
