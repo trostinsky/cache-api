@@ -15,6 +15,10 @@ const CacheSchema = new mongoose.Schema({
     TTL: {
         type: Date,
         default: new Date(Date.now() + 1e5)
+    },
+    createdDate: {
+        type: Date,
+        default: new Date()
     }
 });
 

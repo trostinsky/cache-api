@@ -21,6 +21,9 @@ app.use((req, res, next) => {
 
 // Error handler
 app.use((err, req, res, next) => {
+    if(config.NODE_ENV === 'test'){
+        console.log(err)
+    }
     if(config.NODE_ENV === 'development'){
         res.status(err.status || 500).json({
             message: err.message,
