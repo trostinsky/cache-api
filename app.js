@@ -3,7 +3,9 @@
 // 3. Подключение к БД (mongolab); +
 
 const express = require("express");
+const path = require("path");
 const bodyParser = require("body-parser");
+const cors = require("cors")
 
 require("./utils/connect");
 const config = require("./config");
@@ -19,6 +21,11 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({extended: true})); // for parsing application/x-www-form-urlencoded
 
 app.use("/cache/", cacheRouter);
+
+app.use("/app", (req, res, next) => {
+    res.sendFile(path.join(__dirname, './build', 'index.html'));
+})
+app.use(express.static("./build"));
 app.use((req, res, next) => {
     throw new RESTError("Not found", 404, module.filename);
 })
