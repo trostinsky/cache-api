@@ -1,10 +1,13 @@
 {
-  "port": 3554,
+  "port": 3000,
   "db": {
     "host": "localhost",
     "port": 27017,
     "user": "",
     "password": "",
     "name": "cache_db"
-  }
+  },
+  "secretKey": "developer",
+  "sqlLogging": false,
+  "loggerPath": "./logs.log"
 }

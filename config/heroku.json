@@ -1,0 +1,9 @@
+{
+  "db": {
+    "host": "ds139890.mlab.com",
+    "port": 39890,
+    "user": "cache_user",
+    "password": "cache_user1",
+    "name": "cache_db"
+  }
+}

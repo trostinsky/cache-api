@@ -1,3 +1,7 @@
+// 1. команда npm start +
+// 2. PORT +
+// 3. Подключение к БД (mongolab); +
+
 const express = require("express");
 const bodyParser = require("body-parser");
 
@@ -37,9 +41,11 @@ app.use((err, req, res, next) => {
     }
 })
 
+const {PORT = 3000} = process.env;
+const {port = PORT} = config;
 if(!module.parent){
-    app.listen(config.port, () => {
-        console.log(`SERVER IS STARTED ON PORT: ${config.port}`);
+    app.listen(port, () => {
+        console.log(`SERVER IS STARTED ON PORT: ${port}`);
     })
 };
 

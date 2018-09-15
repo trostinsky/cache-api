@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "test": "mocha ./tests/index.js",
-    "start": "NODE_ENV=development nodemon --inspect app"
+    "start": "NODE_ENV=heroku node app.js",
+    "start:dev": "NODE_ENV=development nodemon --inspect app"
   },
   "author": "Vlad Trostinsky",
   "license": "ISC",
